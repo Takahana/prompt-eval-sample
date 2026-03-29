@@ -7,6 +7,7 @@ import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.graphics.Color
 import com.example.prompttest.generated.GeneratedPrompts
 import com.example.prompttest.generated.GeneratedTestCases
 import com.example.prompttest.genai.LocalLlmClient
@@ -35,14 +36,25 @@ fun App(llmClient: LocalLlmClient) {
     }
 
     MaterialTheme {
+        Scaffold(
+            topBar = {
+                TopAppBar(
+                    title = { Text("Prompt Test App") },
+                    backgroundColor = MaterialTheme.colors.primary,
+                    contentColor = Color.White,
+                    modifier = Modifier.windowInsetsPadding(WindowInsets.statusBars)
+                )
+            }
+        ) { innerPadding ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(16.dp)
+                .padding(innerPadding)
+                .padding(horizontal = 16.dp, vertical = 12.dp)
+                .windowInsetsPadding(WindowInsets.navigationBars)
                 .verticalScroll(rememberScrollState()),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            Text("Prompt Test App", style = MaterialTheme.typography.h5)
 
             // Test Case Selector
             Text("テストケース", style = MaterialTheme.typography.subtitle1)
@@ -125,6 +137,7 @@ fun App(llmClient: LocalLlmClient) {
                     Text(result, modifier = Modifier.padding(12.dp))
                 }
             }
+        }
         }
     }
 }
