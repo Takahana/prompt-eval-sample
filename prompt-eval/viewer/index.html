@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>プロンプト評価ビューア</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif; background: #f5f5f5; color: #333; line-height: 1.6; }
+  .container { max-width: 800px; margin: 0 auto; padding: 16px; }
+  header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+  header h1 { font-size: 1.3em; }
+  .btn { padding: 6px 14px; border: 1px solid #ccc; border-radius: 6px; background: #fff; cursor: pointer; font-size: 0.9em; }
+  .btn:hover { background: #eee; }
+  .filters { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
+  .filters .btn.active { background: #333; color: #fff; border-color: #333; }
+  .progress-bar { background: #ddd; border-radius: 4px; height: 8px; margin-bottom: 16px; }
+  .progress-bar .fill { background: #4caf50; height: 100%; border-radius: 4px; transition: width 0.3s; }
+  .progress-text { font-size: 0.85em; color: #666; margin-bottom: 4px; }
+  .nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+  .nav .label { font-weight: bold; }
+  .card { background: #fff; border-radius: 8px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 16px; }
+  .card h3 { font-size: 0.85em; color: #888; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .card .content { background: #f9f9f9; border-radius: 6px; padding: 12px; font-size: 0.95em; white-space: pre-wrap; word-break: break-word; }
+  .parsed-field { margin-bottom: 8px; }
+  .parsed-field .key { font-weight: bold; color: #555; }
+  .raw-toggle { cursor: pointer; color: #1976d2; font-size: 0.9em; margin-bottom: 8px; user-select: none; }
+  .raw-toggle:hover { text-decoration: underline; }
+  .raw-output { display: none; background: #1e1e1e; color: #d4d4d4; border-radius: 6px; padding: 12px; font-family: monospace; font-size: 0.85em; white-space: pre-wrap; word-break: break-word; max-height: 300px; overflow-y: auto; }
+  .raw-output.open { display: block; }
+  .eval-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .eval-row .criteria { width: 120px; font-weight: bold; font-size: 0.9em; flex-shrink: 0; }
+  .eval-row .ng-desc { font-size: 0.8em; color: #999; margin-left: 8px; }
+  .eval-row .value { padding: 4px 10px; border-radius: 4px; font-size: 0.85em; font-weight: bold; }
+  .eval-row .value.ok { background: #e8f5e9; color: #2e7d32; }
+  .eval-row .value.ng { background: #ffebee; color: #c62828; }
+  .eval-btn { padding: 6px 16px; border: 2px solid #ccc; border-radius: 6px; background: #fff; cursor: pointer; font-size: 0.9em; font-weight: bold; transition: all 0.15s; }
+  .eval-btn:hover { opacity: 0.8; }
+  .eval-btn.ok-selected { background: #4caf50; color: #fff; border-color: #4caf50; }
+  .eval-btn.ng-selected { background: #f44336; color: #fff; border-color: #f44336; }
+  .save-indicator { font-size: 0.85em; color: #4caf50; opacity: 0; transition: opacity 0.3s; margin-left: 8px; }
+  .save-indicator.show { opacity: 1; }
+  .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 100; justify-content: center; align-items: center; }
+  .modal-overlay.open { display: flex; }
+  .modal { background: #fff; border-radius: 12px; padding: 24px; max-width: 700px; width: 90%; max-height: 80vh; overflow-y: auto; }
+  .modal h2 { margin-bottom: 16px; }
+  .modal table { width: 100%; border-collapse: collapse; font-size: 0.9em; }
+  .modal th, .modal td { padding: 8px 10px; text-align: center; border-bottom: 1px solid #eee; }
+  .modal th { background: #f5f5f5; font-weight: bold; }
+  .modal .close-btn { margin-top: 16px; }
+  .empty { text-align: center; color: #999; padding: 40px; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1a1a1a; color: #e0e0e0; }
+    .card { background: #2a2a2a; box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
+    .card .content { background: #333; }
+    .btn { background: #333; color: #e0e0e0; border-color: #555; }
+    .btn:hover { background: #444; }
+    .filters .btn.active { background: #e0e0e0; color: #1a1a1a; border-color: #e0e0e0; }
+    .eval-btn { background: #333; color: #e0e0e0; border-color: #555; }
+    .progress-bar { background: #444; }
+    .modal { background: #2a2a2a; }
+    .modal th { background: #333; }
+    .modal td { border-color: #444; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>プロンプト評価ビューア</h1>
+    <button class="btn" onclick="openSummary()">サマリー表示</button>
+  </header>
+
+  <div class="filters">
+    <button class="btn filter-btn active" data-filter="all">全て</button>
+    <button class="btn filter-btn" data-filter="unevaluated">未評価のみ</button>
+    <span id="promptFilters"></span>
+  </div>
+
+  <div class="progress-text" id="progressText"></div>
+  <div class="progress-bar"><div class="fill" id="progressFill"></div></div>
+
+  <div class="nav">
+    <button class="btn" onclick="navigate(-1)">&larr; 前へ</button>
+    <span class="label" id="navLabel"></span>
+    <button class="btn" onclick="navigate(1)">次へ &rarr;</button>
+  </div>
+
+  <div id="entryView"></div>
+</div>
+
+<div class="modal-overlay" id="summaryModal">
+  <div class="modal">
+    <h2>評価サマリー</h2>
+    <div id="summaryContent"></div>
+    <button class="btn close-btn" onclick="closeSummary()">閉じる</button>
+  </div>
+</div>
+
+<script>
+let data = null;
+let filtered = [];
+let currentIdx = 0;
+let currentFilter = "all";
+
+async function init() {
+  const res = await fetch("/api/results");
+  data = await res.json();
+  buildPromptFilters();
+  applyFilter("all");
+}
+
+function buildPromptFilters() {
+  const pids = [...new Set(data.results.map(r => r.prompt_id))].sort();
+  const container = document.getElementById("promptFilters");
+  container.innerHTML = "";
+  pids.forEach(pid => {
+    const btn = document.createElement("button");
+    btn.className = "btn filter-btn";
+    btn.dataset.filter = pid;
+    btn.textContent = pid.replace("prompt_", "Prompt ");
+    btn.addEventListener("click", () => applyFilter(pid));
+    container.appendChild(btn);
+  });
+}
+
+function applyFilter(filter) {
+  currentFilter = filter;
+  document.querySelectorAll(".filter-btn").forEach(b => {
+    b.classList.toggle("active", b.dataset.filter === filter);
+  });
+  filtered = data.results.map((r, i) => ({ ...r, _index: i }));
+  if (filter === "unevaluated") {
+    filtered = filtered.filter(r =>
+      r.eval.relevance === null || r.eval.actionability === null || r.eval.safety === null
+    );
+  } else if (filter.startsWith("prompt_")) {
+    filtered = filtered.filter(r => r.prompt_id === filter);
+  }
+  currentIdx = 0;
+  render();
+}
+
+document.querySelectorAll(".filter-btn").forEach(b => {
+  b.addEventListener("click", () => applyFilter(b.dataset.filter));
+});
+
+function navigate(delta) {
+  if (filtered.length === 0) return;
+  currentIdx = (currentIdx + delta + filtered.length) % filtered.length;
+  render();
+}
+
+document.addEventListener("keydown", e => {
+  if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
+  if (document.getElementById("summaryModal").classList.contains("open")) return;
+  if (e.key === "ArrowLeft") navigate(-1);
+  if (e.key === "ArrowRight") navigate(1);
+});
+
+function render() {
+  updateProgress();
+  if (filtered.length === 0) {
+    document.getElementById("navLabel").textContent = "";
+    document.getElementById("entryView").innerHTML = '<div class="empty">該当するエントリがありません</div>';
+    return;
+  }
+  const entry = filtered[currentIdx];
+  document.getElementById("navLabel").textContent =
+    `${entry.test_case_id} × ${entry.prompt_id} (${currentIdx + 1}/${filtered.length})`;
+
+  const parsed = entry.parsed_json;
+  const parsedHtml = parsed
+    ? `<div class="parsed-field"><span class="key">action:</span> ${esc(parsed.action)}</div>
+       <div class="parsed-field"><span class="key">reason:</span> ${esc(parsed.reason)}</div>`
+    : '<span style="color:#999">パース失敗</span>';
+
+  const ngDescs = {
+    relevance: "NG = 無関係（入力内容に基づいていない）",
+    actionability: "NG = 抽象的（具体的でなく実行できない）",
+    safety: "NG = 危険・過負荷（無理・不適切な提案）",
+  };
+
+  const evalHtml = ["relevance", "actionability", "safety"].map(c => {
+    const val = entry.eval[c];
+    const okSel = val === "OK" ? "ok-selected" : "";
+    const ngSel = val === "NG" ? "ng-selected" : "";
+    return `<div class="eval-row">
+      <span class="criteria">${c.charAt(0).toUpperCase() + c.slice(1)}</span>
+      <button class="eval-btn ${okSel}" onclick="setEval(${entry._index}, '${c}', 'OK')">OK</button>
+      <button class="eval-btn ${ngSel}" onclick="setEval(${entry._index}, '${c}', 'NG')">NG</button>
+      <span class="ng-desc">${ngDescs[c]}</span>
+    </div>`;
+  }).join("");
+
+  const formatVal = entry.eval.format;
+  const formatClass = formatVal === "OK" ? "ok" : "ng";
+
+  document.getElementById("entryView").innerHTML = `
+    <div class="card">
+      <h3>入力</h3>
+      <div class="content">${esc(entry.input)}</div>
+    </div>
+    <div class="card">
+      <h3>パース結果</h3>
+      <div class="content">${parsedHtml}</div>
+    </div>
+    <div class="card">
+      <div class="raw-toggle" onclick="this.nextElementSibling.classList.toggle('open')">&#9654; 生出力を表示</div>
+      <div class="raw-output">${esc(entry.raw_output)}</div>
+    </div>
+    <div class="card">
+      <h3>評価</h3>
+      <div class="eval-row" style="margin-top:8px">
+        <span class="criteria">Format</span>
+        <span class="value ${formatClass}">${formatVal}</span>
+      </div>
+      ${evalHtml}
+      <span class="save-indicator" id="saveIndicator">保存済み</span>
+    </div>
+  `;
+}
+
+async function setEval(index, criteria, value) {
+  const entry = data.results[index];
+  // Toggle: clicking same value clears it
+  if (entry.eval[criteria] === value) {
+    entry.eval[criteria] = null;
+  } else {
+    entry.eval[criteria] = value;
+  }
+  render();
+  const body = { index };
+  body[criteria] = entry.eval[criteria];
+  await fetch("/api/eval", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+  const indicator = document.getElementById("saveIndicator");
+  if (indicator) {
+    indicator.classList.add("show");
+    setTimeout(() => indicator.classList.remove("show"), 1500);
+  }
+}
+
+function updateProgress() {
+  const total = data.results.length;
+  const done = data.results.filter(r =>
+    r.eval.relevance !== null && r.eval.actionability !== null && r.eval.safety !== null
+  ).length;
+  document.getElementById("progressText").textContent = `評価進捗: ${done}/${total} (${Math.round(done/total*100)}%)`;
+  document.getElementById("progressFill").style.width = `${done/total*100}%`;
+}
+
+async function openSummary() {
+  const res = await fetch("/api/summary");
+  const summary = await res.json();
+  const criteria = ["format", "relevance", "actionability", "safety"];
+  const pids = Object.keys(summary).sort();
+
+  let html = '<table><tr><th>Prompt</th>';
+  criteria.forEach(c => { html += `<th>${c.charAt(0).toUpperCase() + c.slice(1)}</th>`; });
+  html += '<th>全指標OK</th></tr>';
+
+  pids.forEach(pid => {
+    const s = summary[pid];
+    html += `<tr><td><b>${pid}</b></td>`;
+    criteria.forEach(c => {
+      const ok = s[`${c}_ok`];
+      const rated = s[`${c}_rated`];
+      html += `<td>${rated > 0 ? `${ok}/${rated}` : '-'}</td>`;
+    });
+    html += `<td>${s.evaluated > 0 ? `${s.all_ok}/${s.evaluated}` : '-'}</td>`;
+    html += '</tr>';
+  });
+  html += '</table>';
+
+  document.getElementById("summaryContent").innerHTML = html;
+  document.getElementById("summaryModal").classList.add("open");
+}
+
+function closeSummary() {
+  document.getElementById("summaryModal").classList.remove("open");
+}
+
+document.getElementById("summaryModal").addEventListener("click", e => {
+  if (e.target === e.currentTarget) closeSummary();
+});
+
+function esc(s) {
+  if (!s) return '';
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+init();
+</script>
+</body>
+</html>

@@ -1,0 +1,512 @@
+{
+  "run_id": "20260328_115706",
+  "model": "mlx-community/gemma-3n-E4B-it-lm-4bit",
+  "results": [
+    {
+      "test_case_id": "case_001",
+      "prompt_id": "prompt_A",
+      "input": "- ランニング: 3時間0分（6回）",
+      "raw_output": "\n{\"action\": \"次にやる行動\", \"reason\": \"その理由\"}\n\n```json\n{\"action\": \"目標設定\", \"reason\": \"現在の記録を分析し、次のステップとして具体的な目標を設定することで、モチベーションを維持し、更なる成長を促すことができます。例えば、走行距離を増やす、ペースを速める、新しいルートを試すなどの目標を設定できます。\"}\n```",
+      "parsed_json": {
+        "action": "目標設定",
+        "reason": "現在の記録を分析し、次のステップとして具体的な目標を設定することで、モチベーションを維持し、更なる成長を促すことができます。例えば、走行距離を増やす、ペースを速める、新しいルートを試すなどの目標を設定できます。"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_001",
+      "prompt_id": "prompt_B",
+      "input": "- ランニング: 3時間0分（6回）",
+      "raw_output": "\n{\"action\": \"次にやる行動\", \"reason\": \"その理由\"}\n\n{\"action\": \"ウォーキング\", \"reason\": \"ランニングの頻度が高いので、軽い運動を取り入れて、疲労を軽減し、怪我のリスクを減らすため。\"}\n{\"action\": \"休息\", \"reason\": \"ランニングの頻度が高いので、疲労を軽減し、怪我のリスクを減らすため。\"}\n\n```json\n[\n  {\"action\": \"ウォーキング\", \"reason\": \"ランニングの頻度が高いので、軽い運動を取り入れて、疲労を軽減し、怪我のリスクを減らすため。\"},\n  {\"action\": \"休息\", \"reason\": \"ランニングの頻度が高いので、疲労を軽減し、怪我のリスクを減らすため。\"}\n]\n```",
+      "parsed_json": {
+        "action": "次にやる行動",
+        "reason": "その理由"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "NG",
+        "actionability": "NG",
+        "safety": "NG"
+      }
+    },
+    {
+      "test_case_id": "case_001",
+      "prompt_id": "prompt_C",
+      "input": "- ランニング: 3時間0分（6回）",
+      "raw_output": "\n\n{\"action\": \"15分だけ軽いストレッチをする\", \"reason\": \"ランニング後の筋肉の疲労回復を促し、怪我の予防につながります。\"}\n",
+      "parsed_json": {
+        "action": "15分だけ軽いストレッチをする",
+        "reason": "ランニング後の筋肉の疲労回復を促し、怪我の予防につながります。"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_002",
+      "prompt_id": "prompt_A",
+      "input": "- 英語の勉強: 5時間30分（10回）",
+      "raw_output": "\n{\"action\": \"次にやる行動\", \"reason\": \"その理由\"}\n\n{\"action\": \"英語の勉強を継続する\", \"reason\": \"現在の記録は良好であり、習慣化に向けて継続することが重要です。\"}\n",
+      "parsed_json": {
+        "action": "次にやる行動",
+        "reason": "その理由"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "NG",
+        "actionability": "NG",
+        "safety": "NG"
+      }
+    },
+    {
+      "test_case_id": "case_002",
+      "prompt_id": "prompt_B",
+      "input": "- 英語の勉強: 5時間30分（10回）",
+      "raw_output": "\n{\"action\": \"次にやる行動\", \"reason\": \"その理由\"}\n\n{\"action\": \"英語の勉強の休憩\", \"reason\": \"英語の勉強時間を長く使っているため、少し休憩して、集中力を維持しましょう。\"}\n{\"action\": \"軽いストレッチ\", \"reason\": \"英語の勉強の休憩後、軽いストレッチをして、体をリフレッシュしましょう。\"}\n{\"action\": \"次の英語の勉強の計画を立てる\", \"reason\": \"次の英語の勉強の計画を立てて、効率的に学習を進めましょう。\"}\n{\"action\": \"英語の勉強を続ける\", \"reason\": \"英語の勉強の計画を立てたので、計画通りに英語の勉強を続けましょう。\"}\n\n```json\n[\n  {\"action\": \"英語の勉強の休憩\", \"reason\": \"英語の勉強時間を長く使っているため、少し休憩して、集中力を維持しましょう。\"}\n]\n```",
+      "parsed_json": {
+        "action": "次にやる行動",
+        "reason": "その理由"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "NG",
+        "actionability": "NG",
+        "safety": "NG"
+      }
+    },
+    {
+      "test_case_id": "case_002",
+      "prompt_id": "prompt_C",
+      "input": "- 英語の勉強: 5時間30分（10回）",
+      "raw_output": "\n\n{\"action\": \"今日の学習内容を5分で振り返る\", \"reason\": \"短い復習が記憶の定着に役立ちます\"}\n",
+      "parsed_json": {
+        "action": "今日の学習内容を5分で振り返る",
+        "reason": "短い復習が記憶の定着に役立ちます"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_003",
+      "prompt_id": "prompt_A",
+      "input": "- 読書: 2時間0分（4回）",
+      "raw_output": "\n{\"action\": \"次にやる行動\", \"reason\": \"その理由\"}\n\n{\"action\": \"読書を続ける\", \"reason\": \"読書を継続することで、習慣化し、より多くの知識を得られる。\"}\n",
+      "parsed_json": {
+        "action": "次にやる行動",
+        "reason": "その理由"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "NG",
+        "actionability": "NG",
+        "safety": "NG"
+      }
+    },
+    {
+      "test_case_id": "case_003",
+      "prompt_id": "prompt_B",
+      "input": "- 読書: 2時間0分（4回）",
+      "raw_output": "\n{\"action\": \"次にやる行動\", \"reason\": \"その理由\"}\n\n{\"action\": \"読書を続ける\", \"reason\": \"読書は4回も行っているため、この勢いを維持し、さらに読書習慣を深めるために、次の日も読書を続けることを提案します。\"}\n{\"action\": \"軽いストレッチをする\", \"reason\": \"読書は集中力を必要とするため、読書後には軽いストレッチをして、心身の緊張をほぐすことを提案します。\"}\n{\"action\": \"水分補給をする\", \"reason\": \"読書中は水分補給が大切です。読書後には水分補給をして、体内の水分を補給することを提案します。\"}\n{\"action\": \"休息する\", \"reason\": \"読書は集中力を必要とするため、読書後には休息をして、心身の緊張をほぐすことを提案します。\"}\n{\"action\": \"次の読書時間を見つける\", \"reason\": \"読書を4回も行っているため、次の読書時間を見つけて、読書習慣を維持することを提案します。\"}\n{\"action\": \"読書記録を続ける\", \"reason\": \"読",
+      "parsed_json": {
+        "action": "次にやる行動",
+        "reason": "その理由"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "NG",
+        "actionability": "NG",
+        "safety": "NG"
+      }
+    },
+    {
+      "test_case_id": "case_003",
+      "prompt_id": "prompt_C",
+      "input": "- 読書: 2時間0分（4回）",
+      "raw_output": "\n\n{\"action\": \"今日の読書時間を少し増やす\", \"reason\": \"読書習慣の維持と知識の拡大に繋がります\"}\n",
+      "parsed_json": {
+        "action": "今日の読書時間を少し増やす",
+        "reason": "読書習慣の維持と知識の拡大に繋がります"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_004",
+      "prompt_id": "prompt_A",
+      "input": "- 勉強: 12時間0分（20回）",
+      "raw_output": "\n{\"action\": \"次にやる行動\", \"reason\": \"その理由\"}\n\n{\"action\": \"学習内容の振り返り\", \"reason\": \"12時間の学習時間と20回の学習回数は、十分な学習時間と回数を示していますが、内容の定着度を確認し、理解が不十分な部分がないか確認することで、学習効果を最大化できます。\"}\n\n```json\n{\"action\": \"学習内容の振り返り\", \"reason\": \"12時間の学習時間と20回の学習回数は、十分な学習時間と回数を示していますが、内容の定着度を確認し、理解が不十分な部分がないか確認することで、学習効果を最大化できます。\"}\n```",
+      "parsed_json": {
+        "action": "学習内容の振り返り",
+        "reason": "12時間の学習時間と20回の学習回数は、十分な学習時間と回数を示していますが、内容の定着度を確認し、理解が不十分な部分がないか確認することで、学習効果を最大化できます。"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_004",
+      "prompt_id": "prompt_B",
+      "input": "- 勉強: 12時間0分（20回）",
+      "raw_output": "\n{\"action\": \"次にやる行動\", \"reason\": \"その理由\"}\n\n{\"action\": \"休憩する\", \"reason\": \"勉強時間が長いため、少し休憩してリフレッシュしましょう。\"}\n{\"action\": \"軽いストレッチをする\", \"reason\": \"長時間座って勉強しているため、軽いストレッチをして体をほぐしましょう。\"}\n{\"action\": \"水分補給をする\", \"reason\": \"長時間勉強しているため、水分補給をして体力を維持しましょう。\"}\n{\"action\": \"次の勉強時間を設定する\", \"reason\": \"休憩後、次の勉強時間を設定して、効率的に学習を進めましょう。\"}\n\n{\"action\": \"休憩する\", \"reason\": \"勉強時間が長いため、少し休憩してリフレッシュしましょう。\"}\n{\"action\": \"軽いストレッチをする\", \"reason\": \"長時間座って勉強しているため、軽いストレッチをして体をほぐしましょう。\"}\n{\"action\": \"水分補給をする\", \"reason\": \"長時間勉強しているため、水分補給をして体力を維持しましょう。\"}\n{\"action\": \"次の勉強時間を設定する\", \"reason\": \"休憩後、次の勉強時間を設定して、効率的に学習を進めましょう。\"}\n{\"action\":",
+      "parsed_json": {
+        "action": "次にやる行動",
+        "reason": "その理由"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "NG",
+        "actionability": "NG",
+        "safety": "NG"
+      }
+    },
+    {
+      "test_case_id": "case_004",
+      "prompt_id": "prompt_C",
+      "input": "- 勉強: 12時間0分（20回）",
+      "raw_output": "\n\n```json\n{\"action\": \"今日の学習内容を5分で振り返る\", \"reason\": \"短い復習が記憶の定着に役立ちます\"}\n```",
+      "parsed_json": {
+        "action": "今日の学習内容を5分で振り返る",
+        "reason": "短い復習が記憶の定着に役立ちます"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_005",
+      "prompt_id": "prompt_A",
+      "input": "- 筋トレ: 8時間0分（15回）\n- ランニング: 5時間0分（10回）",
+      "raw_output": "\n{\"action\": \"次にやる行動\", \"reason\": \"その理由\"}\n\n{\"action\": \"休息を取りましょう\", \"reason\": \"高負荷な運動を続けているため、疲労回復と怪我の予防のために休息が必要です。\"}\n{\"action\": \"栄養バランスの取れた食事を摂りましょう\", \"reason\": \"運動量が多いので、筋肉の修復とエネルギー補給のために栄養バランスの取れた食事が必要です。\"}\n{\"action\": \"運動の種類を変えてみましょう\", \"reason\": \"筋トレとランニングばかりなので、飽きを防ぎ、全身のバランスを整えるために運動の種類を変えてみましょう。\"}\n{\"action\": \"目標設定を再確認しましょう\", \"reason\": \"現在の活動記録を振り返り、今後の目標設定を再確認することで、モチベーションを維持できます。\"}\n{\"action\": \"睡眠時間を確保しましょう\", \"reason\": \"運動後の疲労回復には十分な睡眠が不可欠です。\"}\n{\"action\": \"水分補給をしっかり行いましょう\", \"reason\": \"運動中の水分補給は、体調不良を防ぐために重要です。\"}\n{\"action\": \"記録を分析し、改善点を見つけましょう\",",
+      "parsed_json": {
+        "action": "次にやる行動",
+        "reason": "その理由"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "NG",
+        "actionability": "NG",
+        "safety": "NG"
+      }
+    },
+    {
+      "test_case_id": "case_005",
+      "prompt_id": "prompt_B",
+      "input": "- 筋トレ: 8時間0分（15回）\n- ランニング: 5時間0分（10回）",
+      "raw_output": "\n{\"action\": \"次にやる行動\", \"reason\": \"その理由\"}\n\n{\"action\": \"休息\", \"reason\": \"筋トレとランニングの時間が長いため、今日は休息して体を休めましょう。\"}\n{\"action\": \"水分補給\", \"reason\": \"運動後には水分補給が大切です。\"}\n{\"action\": \"栄養補給\", \"reason\": \"運動後には栄養補給が大切です。\"}\n{\"action\": \"ストレッチ\", \"reason\": \"運動後のストレッチは怪我の予防に役立ちます。\"}\n{\"action\": \"軽いウォーキング\", \"reason\": \"今日は休息日なので、軽いウォーキングで体を動かしましょう。\"}\n\n```json\n[\n  {\"action\": \"休息\", \"reason\": \"筋トレとランニングの時間が長いため、今日は休息して体を休めましょう。\"}\n]\n```",
+      "parsed_json": {
+        "action": "次にやる行動",
+        "reason": "その理由"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "NG",
+        "actionability": "NG",
+        "safety": "NG"
+      }
+    },
+    {
+      "test_case_id": "case_005",
+      "prompt_id": "prompt_C",
+      "input": "- 筋トレ: 8時間0分（15回）\n- ランニング: 5時間0分（10回）",
+      "raw_output": "\n\n{\"action\": \"15分だけ軽いストレッチをする\", \"reason\": \"運動後の疲労回復に効果的です\"}\n",
+      "parsed_json": {
+        "action": "15分だけ軽いストレッチをする",
+        "reason": "運動後の疲労回復に効果的です"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_006",
+      "prompt_id": "prompt_A",
+      "input": "- ヨガ: 0時間30分（1回）",
+      "raw_output": "\n{\"action\": \"次にやる行動\", \"reason\": \"その理由\"}\n\n{\"action\": \"ヨガの頻度を増やす\", \"reason\": \"現在のヨガの時間が少ないため、効果を最大限に引き出すために頻度を増やすことが望ましい。\"}\n",
+      "parsed_json": {
+        "action": "次にやる行動",
+        "reason": "その理由"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "NG",
+        "actionability": "NG",
+        "safety": "NG"
+      }
+    },
+    {
+      "test_case_id": "case_006",
+      "prompt_id": "prompt_B",
+      "input": "- ヨガ: 0時間30分（1回）",
+      "raw_output": "\n{\"action\": \"次にやる行動\", \"reason\": \"その理由\"}\n\n{\"action\": \"ヨガを15分行う\", \"reason\": \"ヨガの活動時間が少ないため、少しでも継続できるよう、短い時間から始めることで、無理なく習慣化を促します。\"}\n",
+      "parsed_json": {
+        "action": "次にやる行動",
+        "reason": "その理由"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "NG",
+        "actionability": "NG",
+        "safety": "NG"
+      }
+    },
+    {
+      "test_case_id": "case_006",
+      "prompt_id": "prompt_C",
+      "input": "- ヨガ: 0時間30分（1回）",
+      "raw_output": "\n\n```json\n{\"action\": \"15分だけ軽いストレッチをする\", \"reason\": \"ヨガの練習後、筋肉の疲労回復を促し、次の運動への準備をスムーズにします。\"}\n```",
+      "parsed_json": {
+        "action": "15分だけ軽いストレッチをする",
+        "reason": "ヨガの練習後、筋肉の疲労回復を促し、次の運動への準備をスムーズにします。"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_007",
+      "prompt_id": "prompt_A",
+      "input": "- プログラミング: 1時間0分（2回）",
+      "raw_output": "\n{\"action\": \"次にやる行動\", \"reason\": \"その理由\"}\n\n```json\n{\"action\": \"プログラミングの時間を少しでも増やす\", \"reason\": \"現在のプログラミングの時間が非常に短く、スキルアップやプロジェクトの進捗に繋がる可能性が低い。\"}\n```",
+      "parsed_json": {
+        "action": "プログラミングの時間を少しでも増やす",
+        "reason": "現在のプログラミングの時間が非常に短く、スキルアップやプロジェクトの進捗に繋がる可能性が低い。"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_007",
+      "prompt_id": "prompt_B",
+      "input": "- プログラミング: 1時間0分（2回）",
+      "raw_output": "\n{\"action\": \"次にやる行動\", \"reason\": \"その理由\"}\n\n{\"action\": \"プログラミングの休憩\", \"reason\": \"プログラミングの時間が短く、2回だけなので、無理なく続けるために、少し休憩を挟むのがおすすめです。\"}\n{\"action\": \"軽い運動\", \"reason\": \"プログラミングの休憩に、軽い運動を取り入れることで、気分転換になり、集中力を維持できます。\"}\n{\"action\": \"プログラミングの休憩\", \"reason\": \"プログラミングの時間が短く、2回だけなので、無理なく続けるために、少し休憩を挟むのがおすすめです。\"}\n{\"action\": \"軽い運動\", \"reason\": \"プログラミングの休憩に、軽い運動を取り入れることで、気分転換になり、集中力を維持できます。\"}\n{\"action\": \"プログラミングの休憩\", \"reason\": \"プログラミングの時間が短く、2回だけなので、無理なく続けるために、少し休憩を挟むのがおすすめです。\"}\n{\"action\": \"軽い運動\", \"reason\": \"プログラミングの休憩に、軽い運動を取り入れることで、気分転換になり、集中力を維持できます。\"}\n{\"action\": \"プロ",
+      "parsed_json": {
+        "action": "次にやる行動",
+        "reason": "その理由"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "NG",
+        "actionability": "NG",
+        "safety": "NG"
+      }
+    },
+    {
+      "test_case_id": "case_007",
+      "prompt_id": "prompt_C",
+      "input": "- プログラミング: 1時間0分（2回）",
+      "raw_output": "\n\n```json\n{\"action\": \"プログラミングの学習内容を5分で振り返る\", \"reason\": \"短い復習が記憶の定着に役立ちます。\"}\n```",
+      "parsed_json": {
+        "action": "プログラミングの学習内容を5分で振り返る",
+        "reason": "短い復習が記憶の定着に役立ちます。"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_008",
+      "prompt_id": "prompt_A",
+      "input": "- ランニング: 4時間0分（8回）\n- 読書: 3時間0分（5回）\n- 瞑想: 1時間0分（10回）",
+      "raw_output": "\n{\"action\": \"次にやる行動\", \"reason\": \"その理由\"}\n{\"action\": \"次にやる行動\", \"reason\": \"その理由\"}\n\n```json\n{\n  \"action\": \"活動の多様性を維持する\",\n  \"reason\": \"ランニング、読書、瞑想と、それぞれ異なる種類の活動をバランス良く行うことで、心身の健康をより効果的に促進し、飽きを防ぐことができる。\"\n}\n```",
+      "parsed_json": {
+        "action": "活動の多様性を維持する",
+        "reason": "ランニング、読書、瞑想と、それぞれ異なる種類の活動をバランス良く行うことで、心身の健康をより効果的に促進し、飽きを防ぐことができる。"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_008",
+      "prompt_id": "prompt_B",
+      "input": "- ランニング: 4時間0分（8回）\n- 読書: 3時間0分（5回）\n- 瞑想: 1時間0分（10回）",
+      "raw_output": "\n{\"action\": \"次にやる行動\", \"reason\": \"その理由\"}\n{\"action\": \"次にやる行動\", \"reason\": \"その理由\"}\n\n```json\n[\n  {\"action\": \"ランニング後、軽いストレッチをする\", \"reason\": \"ランニング後の筋肉の疲労回復を促し、怪我のリスクを減らすため。\"},\n  {\"action\": \"読書後、水分補給をする\", \"reason\": \"読書中は集中するため、水分補給をすることで、脳の活性化を促し、理解を深めるため。\"},\n  {\"action\": \"瞑想後、深呼吸をしてリラックスする\", \"reason\": \"瞑想後のリラックス効果をさらに高め、心身の安定を促すため。\"}\n]\n```",
+      "parsed_json": {
+        "action": "次にやる行動",
+        "reason": "その理由"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "NG",
+        "actionability": "NG",
+        "safety": "NG"
+      }
+    },
+    {
+      "test_case_id": "case_008",
+      "prompt_id": "prompt_C",
+      "input": "- ランニング: 4時間0分（8回）\n- 読書: 3時間0分（5回）\n- 瞑想: 1時間0分（10回）",
+      "raw_output": "\n\n{\"action\": \"今日の読書時間を30分増やす\", \"reason\": \"読書習慣の維持と知識の深化に繋がります\"}\n",
+      "parsed_json": {
+        "action": "今日の読書時間を30分増やす",
+        "reason": "読書習慣の維持と知識の深化に繋がります"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_009",
+      "prompt_id": "prompt_A",
+      "input": "- 英語の勉強: 6時間0分（12回）\n- ジム: 2時間0分（4回）",
+      "raw_output": "\n{\"action\": \"次にやる行動\", \"reason\": \"その理由\"}\n\n{\"action\": \"英語の勉強を続ける\", \"reason\": \"英語の勉強は、今月も継続して行われており、目標達成に向けて習慣化を促すため、継続を促すことが効果的です。\"}\n{\"action\": \"ジムでの運動強度を上げる\", \"reason\": \"ジムでの運動時間が短く、運動強度を上げることで、より効果的なトレーニングを促すことができます。\"}\n{\"action\": \"両方の活動のバランスを調整する\", \"reason\": \"英語の勉強に多くの時間を費やしており、ジムでの運動時間が少ないため、両方の活動のバランスを調整することで、より健康的な生活を送ることができます。\"}\n{\"action\": \"次の月の目標設定を行う\", \"reason\": \"現在の活動記録を振り返り、次の月の目標設定を行うことで、より効果的な行動計画を立てることができます。\"}\n{\"action\": \"休息日を設ける\", \"reason\": \"英語の勉強とジムでの運動は、どちらも集中力と体力を必要とするため、休息日を設けることで、より効果的な活動を促すことができます。\"}\n{\"action\": \"英語の勉強の",
+      "parsed_json": {
+        "action": "次にやる行動",
+        "reason": "その理由"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "NG",
+        "actionability": "NG",
+        "safety": "NG"
+      }
+    },
+    {
+      "test_case_id": "case_009",
+      "prompt_id": "prompt_B",
+      "input": "- 英語の勉強: 6時間0分（12回）\n- ジム: 2時間0分（4回）",
+      "raw_output": "\n{\"action\": \"次にやる行動\", \"reason\": \"その理由\"}\n\n{\"action\": \"英語の勉強を30分休憩して、軽いストレッチをする。\", \"reason\": \"英語の勉強の時間が6時間と多いので、休憩を入れて集中力を維持し、疲労を軽減します。\"}\n{\"action\": \"ジムの後に、水分補給と軽い食事をする。\", \"reason\": \"ジムでの運動後には、水分と栄養補給が重要です。\"}\n{\"action\": \"明日、英語の勉強の時間を少し減らして、ジムの時間を増やすことを検討する。\", \"reason\": \"英語の勉強の時間が6時間と多いので、バランスを取るために、ジムの時間を増やすことを検討します。\"}\n{\"action\": \"週末に、休息日を設ける。\", \"reason\": \"週に6日も活動しているので、心身の疲労を回復させるために、休息日を設けることを検討します。\"}\n{\"action\": \"次の英語の勉強の前に、目標を再確認する。\", \"reason\": \"目標を再確認することで、モチベーションを維持し、効果的な学習を促します。\"}\n{\"action\": \"次のジムの前に、",
+      "parsed_json": {
+        "action": "次にやる行動",
+        "reason": "その理由"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "NG",
+        "actionability": "NG",
+        "safety": "NG"
+      }
+    },
+    {
+      "test_case_id": "case_009",
+      "prompt_id": "prompt_C",
+      "input": "- 英語の勉強: 6時間0分（12回）\n- ジム: 2時間0分（4回）",
+      "raw_output": "\n\n{\"action\": \"今日の学習内容を5分で振り返る\", \"reason\": \"短い復習が記憶の定着に役立ちます\"}\n",
+      "parsed_json": {
+        "action": "今日の学習内容を5分で振り返る",
+        "reason": "短い復習が記憶の定着に役立ちます"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_010",
+      "prompt_id": "prompt_A",
+      "input": "- 散歩: 0時間15分（1回）",
+      "raw_output": "\n{\"action\": \"次にやる行動\", \"reason\": \"その理由\"}\n\n{\"action\": \"散歩の時間を少し増やす\", \"reason\": \"現在の活動記録は非常に少ないため、少しずつ活動量を増やすことを促すことが重要です。\"}\n",
+      "parsed_json": {
+        "action": "次にやる行動",
+        "reason": "その理由"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "NG",
+        "actionability": "NG",
+        "safety": "NG"
+      }
+    },
+    {
+      "test_case_id": "case_010",
+      "prompt_id": "prompt_B",
+      "input": "- 散歩: 0時間15分（1回）",
+      "raw_output": "\n{\"action\": \"次にやる行動\", \"reason\": \"その理由\"}\n\n{\"action\": \"散歩を30分行う\", \"reason\": \"今月の散歩時間が少ないため、少しずつでも活動時間を増やし、健康維持を促すため。\"}\n{\"action\": \"水分補給を忘れずに\", \"reason\": \"散歩をする際は、脱水症状を防ぐため、水分補給を促すため。\"}\n{\"action\": \"無理のない範囲で、次の散歩の時間を決めてみましょう。\", \"reason\": \"活動記録の傾向から、散歩の頻度と時間が少ないため、無理のない範囲で次の散歩の時間を決めて、継続を促すため。\"}\n\n```json\n[\n  {\"action\": \"散歩を30分行う\", \"reason\": \"今月の散歩時間が少ないため、少しずつでも活動時間を増やし、健康維持を促すため。\"},\n  {\"action\": \"水分補給を忘れずに\", \"reason\": \"散歩をする際は、脱水症状を防ぐため、水分補給を促すため。\"},\n  {\"action\": \"無理のない範囲で、次の散歩の時間を決めて",
+      "parsed_json": {
+        "action": "次にやる行動",
+        "reason": "その理由"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "NG",
+        "actionability": "NG",
+        "safety": "NG"
+      }
+    },
+    {
+      "test_case_id": "case_010",
+      "prompt_id": "prompt_C",
+      "input": "- 散歩: 0時間15分（1回）",
+      "raw_output": "\n\n{\"action\": \"15分だけ軽いストレッチをする\", \"reason\": \"運動後の疲労回復に効果的です\"}\n",
+      "parsed_json": {
+        "action": "15分だけ軽いストレッチをする",
+        "reason": "運動後の疲労回復に効果的です"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    }
+  ],
+  "summary": {
+    "prompt_A": {
+      "total": 10,
+      "format_ok": 10,
+      "format_rate": 1.0,
+      "fully_evaluated": 0,
+      "all_ok": 0,
+      "all_ok_rate": null
+    },
+    "prompt_B": {
+      "total": 10,
+      "format_ok": 10,
+      "format_rate": 1.0,
+      "fully_evaluated": 0,
+      "all_ok": 0,
+      "all_ok_rate": null
+    },
+    "prompt_C": {
+      "total": 10,
+      "format_ok": 10,
+      "format_rate": 1.0,
+      "fully_evaluated": 0,
+      "all_ok": 0,
+      "all_ok_rate": null
+    }
+  }
+}

@@ -1,0 +1,364 @@
+{
+  "run_id": "20260328_170025",
+  "model": "mlx-community/gemma-3n-E4B-it-lm-4bit",
+  "results": [
+    {
+      "test_case_id": "case_001",
+      "prompt_id": "prompt_G",
+      "input": "- ランニング: 3時間0分（6回）",
+      "raw_output": "\n```json\n{\"missing\": \"人間関係の時間が不足しています\", \"action\": \"家族や友人と30分話す時間を作る\", \"reason\": \"運動と勉強は充実していますが、大切な人と過ごす時間も生活の満足度を高めます\"}\n```",
+      "parsed_json": {
+        "missing": "人間関係の時間が不足しています",
+        "action": "家族や友人と30分話す時間を作る",
+        "reason": "運動と勉強は充実していますが、大切な人と過ごす時間も生活の満足度を高めます"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_001",
+      "prompt_id": "prompt_H",
+      "input": "- ランニング: 3時間0分（6回）",
+      "raw_output": "\n{\"missing\": \"人間関係\", \"action\": \"友人に連絡を取って週末の予定を立てる\", \"reason\": \"ランニングに集中するあまり、他の活動が不足しています。\"}",
+      "parsed_json": {
+        "missing": "人間関係",
+        "action": "友人に連絡を取って週末の予定を立てる",
+        "reason": "ランニングに集中するあまり、他の活動が不足しています。"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_002",
+      "prompt_id": "prompt_G",
+      "input": "- 英語の勉強: 5時間30分（10回）",
+      "raw_output": "\n```json\n{\"missing\": \"余暇の時間が不足しています\", \"action\": \"週末に好きな映画を観る\", \"reason\": \"仕事と勉強に集中するあまり、リラックスする時間や趣味に費やす時間が不足しています。余暇を充実させることで、心身の健康を維持し、ストレスを軽減することができます。\"}\n```",
+      "parsed_json": {
+        "missing": "余暇の時間が不足しています",
+        "action": "週末に好きな映画を観る",
+        "reason": "仕事と勉強に集中するあまり、リラックスする時間や趣味に費やす時間が不足しています。余暇を充実させることで、心身の健康を維持し、ストレスを軽減することができます。"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_002",
+      "prompt_id": "prompt_H",
+      "input": "- 英語の勉強: 5時間30分（10回）",
+      "raw_output": "\n```json\n{\"missing\": \"人間関係\", \"action\": \"友人に連絡を取って週末の予定を立てる\", \"reason\": \"学びと余暇は充実していますが、人と過ごす時間も大切です\"}\n```",
+      "parsed_json": {
+        "missing": "人間関係",
+        "action": "友人に連絡を取って週末の予定を立てる",
+        "reason": "学びと余暇は充実していますが、人と過ごす時間も大切です"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_003",
+      "prompt_id": "prompt_G",
+      "input": "- 読書: 2時間0分（4回）",
+      "raw_output": "\n```json\n{\"missing\": \"仕事の時間が不足しています\", \"action\": \"副業で週に2時間スキルアップの時間を設ける\", \"reason\": \"読書と学びは充実していますが、仕事の時間が不足しており、生活の充実度を高めるために、副業でスキルアップの時間を設けることで、仕事の時間を補うことができます\"}\n```",
+      "parsed_json": {
+        "missing": "仕事の時間が不足しています",
+        "action": "副業で週に2時間スキルアップの時間を設ける",
+        "reason": "読書と学びは充実していますが、仕事の時間が不足しており、生活の充実度を高めるために、副業でスキルアップの時間を設けることで、仕事の時間を補うことができます"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_003",
+      "prompt_id": "prompt_H",
+      "input": "- 読書: 2時間0分（4回）",
+      "raw_output": "\n{\"missing\": \"人間関係\", \"action\": \"友人に連絡を取って週末の予定を立てる\", \"reason\": \"読書と学びは充実していますが、人と過ごす時間も大切です\"}",
+      "parsed_json": {
+        "missing": "人間関係",
+        "action": "友人に連絡を取って週末の予定を立てる",
+        "reason": "読書と学びは充実していますが、人と過ごす時間も大切です"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_004",
+      "prompt_id": "prompt_G",
+      "input": "- 勉強: 12時間0分（20回）",
+      "raw_output": "\n```json\n{\"missing\": \"余暇の時間が不足しています\", \"action\": \"好きな音楽を聴くために30分間、時間を作る\", \"reason\": \"勉強と仕事に集中するあまり、リラックスする時間や趣味の時間も不足しているため、心身の健康を維持するために余暇の時間を確保することが重要です。\"}\n```",
+      "parsed_json": {
+        "missing": "余暇の時間が不足しています",
+        "action": "好きな音楽を聴くために30分間、時間を作る",
+        "reason": "勉強と仕事に集中するあまり、リラックスする時間や趣味の時間も不足しているため、心身の健康を維持するために余暇の時間を確保することが重要です。"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_004",
+      "prompt_id": "prompt_H",
+      "input": "- 勉強: 12時間0分（20回）",
+      "raw_output": "\n{\"missing\": \"人間関係\", \"action\": \"友人に連絡を取って週末の予定を立てる\", \"reason\": \"勉強に集中するあまり、人と過ごす時間が不足しています。\"}",
+      "parsed_json": {
+        "missing": "人間関係",
+        "action": "友人に連絡を取って週末の予定を立てる",
+        "reason": "勉強に集中するあまり、人と過ごす時間が不足しています。"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_005",
+      "prompt_id": "prompt_G",
+      "input": "- 筋トレ: 8時間0分（15回）\n- ランニング: 5時間0分（10回）",
+      "raw_output": "\n```json\n{\"missing\": \"人間関係の時間が不足しています\", \"action\": \"家族や友人と30分話す時間を作る\", \"reason\": \"運動と勉強は充実していますが、大切な人と過ごす時間も生活の満足度を高めます\"}\n```",
+      "parsed_json": {
+        "missing": "人間関係の時間が不足しています",
+        "action": "家族や友人と30分話す時間を作る",
+        "reason": "運動と勉強は充実していますが、大切な人と過ごす時間も生活の満足度を高めます"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_005",
+      "prompt_id": "prompt_H",
+      "input": "- 筋トレ: 8時間0分（15回）\n- ランニング: 5時間0分（10回）",
+      "raw_output": "\n{\"missing\": \"人間関係\", \"action\": \"友人に連絡を取って週末の予定を立てる\", \"reason\": \"筋トレとランニングに集中しがちで、他の活動とのバランスが崩れているため、人間関係を充実させる時間が必要です\"}",
+      "parsed_json": {
+        "missing": "人間関係",
+        "action": "友人に連絡を取って週末の予定を立てる",
+        "reason": "筋トレとランニングに集中しがちで、他の活動とのバランスが崩れているため、人間関係を充実させる時間が必要です"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_006",
+      "prompt_id": "prompt_G",
+      "input": "- ヨガ: 0時間30分（1回）",
+      "raw_output": "\n```json\n{\"missing\": \"人間関係の時間が不足しています\", \"action\": \"家族や友人と30分話す時間を作る\", \"reason\": \"運動と勉強は充実していますが、大切な人と過ごす時間も生活の満足度を高めます\"}\n```",
+      "parsed_json": {
+        "missing": "人間関係の時間が不足しています",
+        "action": "家族や友人と30分話す時間を作る",
+        "reason": "運動と勉強は充実していますが、大切な人と過ごす時間も生活の満足度を高めます"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_006",
+      "prompt_id": "prompt_H",
+      "input": "- ヨガ: 0時間30分（1回）",
+      "raw_output": "\n{\"missing\": \"人間関係\", \"action\": \"友人に連絡を取って週末の予定を立てる\", \"reason\": \"生活には「仕事」「人間関係」「余暇」「学び」のバランスが大切です。ヨガは行われていますが、人間関係の活動が不足しています。\"}",
+      "parsed_json": {
+        "missing": "人間関係",
+        "action": "友人に連絡を取って週末の予定を立てる",
+        "reason": "生活には「仕事」「人間関係」「余暇」「学び」のバランスが大切です。ヨガは行われていますが、人間関係の活動が不足しています。"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_007",
+      "prompt_id": "prompt_G",
+      "input": "- プログラミング: 1時間0分（2回）",
+      "raw_output": "\n```json\n{\"missing\": \"仕事の時間が不足しています\", \"action\": \"副業で1時間プログラミングを勉強する\", \"reason\": \"プログラミングのスキルアップは重要ですが、仕事の時間が不足しているため、副業でプログラミングを勉強することで、仕事の時間を確保し、バランスを整えることができます\"}\n```",
+      "parsed_json": {
+        "missing": "仕事の時間が不足しています",
+        "action": "副業で1時間プログラミングを勉強する",
+        "reason": "プログラミングのスキルアップは重要ですが、仕事の時間が不足しているため、副業でプログラミングを勉強することで、仕事の時間を確保し、バランスを整えることができます"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_007",
+      "prompt_id": "prompt_H",
+      "input": "- プログラミング: 1時間0分（2回）",
+      "raw_output": "\n{\"missing\": \"人間関係\", \"action\": \"友人に連絡を取って週末の予定を立てる\", \"reason\": \"プログラミングと学びは充実していますが、人と過ごす時間が不足しています\"}",
+      "parsed_json": {
+        "missing": "人間関係",
+        "action": "友人に連絡を取って週末の予定を立てる",
+        "reason": "プログラミングと学びは充実していますが、人と過ごす時間が不足しています"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_008",
+      "prompt_id": "prompt_G",
+      "input": "- ランニング: 4時間0分（8回）\n- 読書: 3時間0分（5回）\n- 瞑想: 1時間0分（10回）",
+      "raw_output": "\n```json\n{\"missing\": \"仕事の時間が不足しています\", \"action\": \"副業で週2時間スキルアップの時間を設ける\", \"reason\": \"運動、読書、瞑想は充実していますが、仕事の時間が不足しており、生活の充実度を高めるために、副業でスキルアップの時間を設けることで、仕事の時間を補うことができます\"}\n```",
+      "parsed_json": {
+        "missing": "仕事の時間が不足しています",
+        "action": "副業で週2時間スキルアップの時間を設ける",
+        "reason": "運動、読書、瞑想は充実していますが、仕事の時間が不足しており、生活の充実度を高めるために、副業でスキルアップの時間を設けることで、仕事の時間を補うことができます"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_008",
+      "prompt_id": "prompt_H",
+      "input": "- ランニング: 4時間0分（8回）\n- 読書: 3時間0分（5回）\n- 瞑想: 1時間0分（10回）",
+      "raw_output": "\n```json\n{\"missing\": \"人間関係\", \"action\": \"友人に連絡を取って週末の予定を立てる\", \"reason\": \"仕事と余暇は充実していますが、人と過ごす時間も大切です\"}\n```",
+      "parsed_json": {
+        "missing": "人間関係",
+        "action": "友人に連絡を取って週末の予定を立てる",
+        "reason": "仕事と余暇は充実していますが、人と過ごす時間も大切です"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_009",
+      "prompt_id": "prompt_G",
+      "input": "- 英語の勉強: 6時間0分（12回）\n- ジム: 2時間0分（4回）",
+      "raw_output": "\n```json\n{\"missing\": \"人間関係の時間が不足しています\", \"action\": \"家族や友人と30分話す時間を作る\", \"reason\": \"運動と勉強は充実していますが、大切な人と過ごす時間も生活の満足度を高めます\"}\n```",
+      "parsed_json": {
+        "missing": "人間関係の時間が不足しています",
+        "action": "家族や友人と30分話す時間を作る",
+        "reason": "運動と勉強は充実していますが、大切な人と過ごす時間も生活の満足度を高めます"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_009",
+      "prompt_id": "prompt_H",
+      "input": "- 英語の勉強: 6時間0分（12回）\n- ジム: 2時間0分（4回）",
+      "raw_output": "\n{\"missing\": \"人間関係\", \"action\": \"友人に連絡を取って週末の予定を立てる\", \"reason\": \"仕事と学びは充実していますが、余暇と人間関係のバランスが偏っているため、充実した人間関係を築くことが重要です\"}",
+      "parsed_json": {
+        "missing": "人間関係",
+        "action": "友人に連絡を取って週末の予定を立てる",
+        "reason": "仕事と学びは充実していますが、余暇と人間関係のバランスが偏っているため、充実した人間関係を築くことが重要です"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_010",
+      "prompt_id": "prompt_G",
+      "input": "- 散歩: 0時間15分（1回）",
+      "raw_output": "\n```json\n{\"missing\": \"人間関係の時間が不足しています\", \"action\": \"家族や友人と30分話す時間を作る\", \"reason\": \"運動と勉強は充実していますが、大切な人と過ごす時間も生活の満足度を高めます\"}\n```",
+      "parsed_json": {
+        "missing": "人間関係の時間が不足しています",
+        "action": "家族や友人と30分話す時間を作る",
+        "reason": "運動と勉強は充実していますが、大切な人と過ごす時間も生活の満足度を高めます"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_010",
+      "prompt_id": "prompt_H",
+      "input": "- 散歩: 0時間15分（1回）",
+      "raw_output": "\n{\"missing\": \"人間関係\", \"action\": \"友人に連絡を取って週末の予定を立てる\", \"reason\": \"散歩以外の活動が少ないため、人と過ごす時間を増やすことが大切です\"}",
+      "parsed_json": {
+        "missing": "人間関係",
+        "action": "友人に連絡を取って週末の予定を立てる",
+        "reason": "散歩以外の活動が少ないため、人と過ごす時間を増やすことが大切です"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    }
+  ],
+  "summary": {
+    "prompt_G": {
+      "total": 10,
+      "format_ok": 10,
+      "format_rate": 1.0,
+      "fully_evaluated": 0,
+      "all_ok": 0,
+      "all_ok_rate": null
+    },
+    "prompt_H": {
+      "total": 10,
+      "format_ok": 10,
+      "format_rate": 1.0,
+      "fully_evaluated": 0,
+      "all_ok": 0,
+      "all_ok_rate": null
+    }
+  }
+}

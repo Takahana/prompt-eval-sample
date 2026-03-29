@@ -1,0 +1,512 @@
+{
+  "run_id": "20260328_163434",
+  "model": "mlx-community/gemma-3n-E4B-it-lm-4bit",
+  "results": [
+    {
+      "test_case_id": "case_001",
+      "prompt_id": "prompt_D",
+      "input": "- ランニング: 3時間0分（6回）",
+      "raw_output": "\n{\"action\": \"明日のランニングコースを決めておく\", \"reason\": \"事前に計画すると継続しやすくなります\"}\n\n",
+      "parsed_json": {
+        "action": "明日のランニングコースを決めておく",
+        "reason": "事前に計画すると継続しやすくなります"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_001",
+      "prompt_id": "prompt_E",
+      "input": "- ランニング: 3時間0分（6回）",
+      "raw_output": "\n```json\n{\"action\": \"...\", \"reason\": \"...\"}\n```\n```json\n{\"action\": \"15分だけ軽いストレッチをする\", \"reason\": \"運動後の疲労回復に効果的です\"}\n```",
+      "parsed_json": {
+        "action": "...",
+        "reason": "..."
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "NG",
+        "actionability": "NG",
+        "safety": "NG"
+      }
+    },
+    {
+      "test_case_id": "case_001",
+      "prompt_id": "prompt_F",
+      "input": "- ランニング: 3時間0分（6回）",
+      "raw_output": "\n{\"action\": \"ウォーキングで体を休める\", \"reason\": \"ランニング後の疲労回復を促し、怪我のリスクを減らします\"}",
+      "parsed_json": {
+        "action": "ウォーキングで体を休める",
+        "reason": "ランニング後の疲労回復を促し、怪我のリスクを減らします"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_002",
+      "prompt_id": "prompt_D",
+      "input": "- 英語の勉強: 5時間30分（10回）",
+      "raw_output": "\n{\"action\": \"今日の学習内容を5分で振り返る\", \"reason\": \"短い復習が記憶の定着に役立ちます\"}\n\n",
+      "parsed_json": {
+        "action": "今日の学習内容を5分で振り返る",
+        "reason": "短い復習が記憶の定着に役立ちます"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_002",
+      "prompt_id": "prompt_E",
+      "input": "- 英語の勉強: 5時間30分（10回）",
+      "raw_output": "\n```json\n{\"action\": \"...\", \"reason\": \"...\"}\n```\n```json\n{\"action\": \"今日の学習内容を5分で振り返る\", \"reason\": \"短い復習が記憶の定着に役立ちます\"}\n```",
+      "parsed_json": {
+        "action": "...",
+        "reason": "..."
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "NG",
+        "actionability": "NG",
+        "safety": "NG"
+      }
+    },
+    {
+      "test_case_id": "case_002",
+      "prompt_id": "prompt_F",
+      "input": "- 英語の勉強: 5時間30分（10回）",
+      "raw_output": "\n{\"action\": \"英語の勉強の進捗を記録する\", \"reason\": \"モチベーション維持と効果測定のため、学習内容や理解度を記録することで、今後の学習計画を立てやすくなります。\"}\n",
+      "parsed_json": {
+        "action": "英語の勉強の進捗を記録する",
+        "reason": "モチベーション維持と効果測定のため、学習内容や理解度を記録することで、今後の学習計画を立てやすくなります。"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_003",
+      "prompt_id": "prompt_D",
+      "input": "- 読書: 2時間0分（4回）",
+      "raw_output": "\n{\"action\": \"読書記録を毎日続ける\", \"reason\": \"継続することで知識の幅が広がり、理解力も向上します\"}\n",
+      "parsed_json": {
+        "action": "読書記録を毎日続ける",
+        "reason": "継続することで知識の幅が広がり、理解力も向上します"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_003",
+      "prompt_id": "prompt_E",
+      "input": "- 読書: 2時間0分（4回）",
+      "raw_output": "\n```json\n{\"action\": \"...\", \"reason\": \"...\"}\n```\n```json\n{\"action\": \"今日の読書を5分だけ続ける\", \"reason\": \"少しだけ続けることで、読書習慣を維持できます\"}\n```",
+      "parsed_json": {
+        "action": "...",
+        "reason": "..."
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "NG",
+        "actionability": "NG",
+        "safety": "NG"
+      }
+    },
+    {
+      "test_case_id": "case_003",
+      "prompt_id": "prompt_F",
+      "input": "- 読書: 2時間0分（4回）",
+      "raw_output": "\n{\"action\": \"読書を続ける\", \"reason\": \"読書習慣を維持し、知識を深めるため\"}\n",
+      "parsed_json": {
+        "action": "読書を続ける",
+        "reason": "読書習慣を維持し、知識を深めるため"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_004",
+      "prompt_id": "prompt_D",
+      "input": "- 勉強: 12時間0分（20回）",
+      "raw_output": "\n{\"action\": \"今日の学習内容を5分で振り返る\", \"reason\": \"短い復習が記憶の定着に役立ちます\"}",
+      "parsed_json": {
+        "action": "今日の学習内容を5分で振り返る",
+        "reason": "短い復習が記憶の定着に役立ちます"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_004",
+      "prompt_id": "prompt_E",
+      "input": "- 勉強: 12時間0分（20回）",
+      "raw_output": "\n```json\n{\"action\": \"...\", \"reason\": \"...\"}\n```\n```json\n{\"action\": \"今日の学習内容を5分で振り返る\", \"reason\": \"短い復習が記憶の定着に役立ちます\"}\n```",
+      "parsed_json": {
+        "action": "...",
+        "reason": "..."
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "NG",
+        "actionability": "NG",
+        "safety": "NG"
+      }
+    },
+    {
+      "test_case_id": "case_004",
+      "prompt_id": "prompt_F",
+      "input": "- 勉強: 12時間0分（20回）",
+      "raw_output": "\n{\"action\": \"毎日30分、好きな科目を勉強する\", \"reason\": \"継続しやすい習慣化を促し、学習効果を高めます\"}",
+      "parsed_json": {
+        "action": "毎日30分、好きな科目を勉強する",
+        "reason": "継続しやすい習慣化を促し、学習効果を高めます"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_005",
+      "prompt_id": "prompt_D",
+      "input": "- 筋トレ: 8時間0分（15回）\n- ランニング: 5時間0分（10回）",
+      "raw_output": "\n{\"action\": \"今月の活動記録を分析して、改善点を見つける\", \"reason\": \"より効果的なトレーニングプランを立てるために、今回の記録から得られたデータをもとに分析することで、より効率的なトレーニングプランを立てることができます。\"}\n\n",
+      "parsed_json": {
+        "action": "今月の活動記録を分析して、改善点を見つける",
+        "reason": "より効果的なトレーニングプランを立てるために、今回の記録から得られたデータをもとに分析することで、より効率的なトレーニングプランを立てることができます。"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_005",
+      "prompt_id": "prompt_E",
+      "input": "- 筋トレ: 8時間0分（15回）\n- ランニング: 5時間0分（10回）",
+      "raw_output": "\n```json\n{\"action\": \"...\", \"reason\": \"...\"}\n```\n```json\n{\"action\": \"少しだけ軽いストレッチをする\", \"reason\": \"運動後の疲労回復に効果的です\"}\n```",
+      "parsed_json": {
+        "action": "...",
+        "reason": "..."
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "NG",
+        "actionability": "NG",
+        "safety": "NG"
+      }
+    },
+    {
+      "test_case_id": "case_005",
+      "prompt_id": "prompt_F",
+      "input": "- 筋トレ: 8時間0分（15回）\n- ランニング: 5時間0分（10回）",
+      "raw_output": "\n{\"action\": \"筋トレ後、水分補給をする\", \"reason\": \"筋肉の回復を促し、脱水症状を防ぎます\"}",
+      "parsed_json": {
+        "action": "筋トレ後、水分補給をする",
+        "reason": "筋肉の回復を促し、脱水症状を防ぎます"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_006",
+      "prompt_id": "prompt_D",
+      "input": "- ヨガ: 0時間30分（1回）",
+      "raw_output": "\n{\"action\": \"ヨガの練習時間を5分増やす\", \"reason\": \"少しずつ運動時間を増やしていくことで、継続しやすくなります。\"}\n\n",
+      "parsed_json": {
+        "action": "ヨガの練習時間を5分増やす",
+        "reason": "少しずつ運動時間を増やしていくことで、継続しやすくなります。"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_006",
+      "prompt_id": "prompt_E",
+      "input": "- ヨガ: 0時間30分（1回）",
+      "raw_output": "\n```json\n{\"action\": \"15分だけ軽いストレッチをする\", \"reason\": \"運動後の疲労回復に効果的です\"}\n```",
+      "parsed_json": {
+        "action": "15分だけ軽いストレッチをする",
+        "reason": "運動後の疲労回復に効果的です"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_006",
+      "prompt_id": "prompt_F",
+      "input": "- ヨガ: 0時間30分（1回）",
+      "raw_output": "\n{\"action\": \"ヨガを週に2回行う\", \"reason\": \"継続することで効果をより実感しやすくなります\"}",
+      "parsed_json": {
+        "action": "ヨガを週に2回行う",
+        "reason": "継続することで効果をより実感しやすくなります"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_007",
+      "prompt_id": "prompt_D",
+      "input": "- プログラミング: 1時間0分（2回）",
+      "raw_output": "\n{\"action\": \"プログラミングの学習内容を整理する\", \"reason\": \"学習内容を整理することで、理解が深まり、今後の学習計画を立てやすくなります\"}\n\n",
+      "parsed_json": {
+        "action": "プログラミングの学習内容を整理する",
+        "reason": "学習内容を整理することで、理解が深まり、今後の学習計画を立てやすくなります"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_007",
+      "prompt_id": "prompt_E",
+      "input": "- プログラミング: 1時間0分（2回）",
+      "raw_output": "\n```json\n{\"action\": \"...\", \"reason\": \"...\"}\n```\n```json\n{\"action\": \"少しだけ続ける\", \"reason\": \"プログラミングの学習は継続が大切です。少しでも続けることで、理解が深まり、スキルアップにつながります。\"}\n```",
+      "parsed_json": {
+        "action": "...",
+        "reason": "..."
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "NG",
+        "actionability": "NG",
+        "safety": "NG"
+      }
+    },
+    {
+      "test_case_id": "case_007",
+      "prompt_id": "prompt_F",
+      "input": "- プログラミング: 1時間0分（2回）",
+      "raw_output": "\n{\"action\": \"プログラミングの学習教材を1つ選択して、15分だけ取り組む\", \"reason\": \"少しずつ学習習慣を維持し、モチベーションを保つため\"}",
+      "parsed_json": {
+        "action": "プログラミングの学習教材を1つ選択して、15分だけ取り組む",
+        "reason": "少しずつ学習習慣を維持し、モチベーションを保つため"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_008",
+      "prompt_id": "prompt_D",
+      "input": "- ランニング: 4時間0分（8回）\n- 読書: 3時間0分（5回）\n- 瞑想: 1時間0分（10回）",
+      "raw_output": "\n{\"action\": \"ランニングの記録を分析して、ペースを少し上げてみる\", \"reason\": \"現状の記録をさらに向上させるためのステップです\"}\n",
+      "parsed_json": {
+        "action": "ランニングの記録を分析して、ペースを少し上げてみる",
+        "reason": "現状の記録をさらに向上させるためのステップです"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_008",
+      "prompt_id": "prompt_E",
+      "input": "- ランニング: 4時間0分（8回）\n- 読書: 3時間0分（5回）\n- 瞑想: 1時間0分（10回）",
+      "raw_output": "\n```json\n{\"action\": \"...\", \"reason\": \"...\"}\n```\n```json\n{\"action\": \"ランニング後、水分補給と栄養補給をしっかり行う\", \"reason\": \"運動後の疲労回復と筋肉の修復に効果的です\"}\n```",
+      "parsed_json": {
+        "action": "...",
+        "reason": "..."
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "NG",
+        "actionability": "NG",
+        "safety": "NG"
+      }
+    },
+    {
+      "test_case_id": "case_008",
+      "prompt_id": "prompt_F",
+      "input": "- ランニング: 4時間0分（8回）\n- 読書: 3時間0分（5回）\n- 瞑想: 1時間0分（10回）",
+      "raw_output": "\n{\"action\": \"瞑想の時間を1日1回、5分に短縮して継続する\", \"reason\": \"習慣化を促し、無理なく続けられるようにするため\"}",
+      "parsed_json": {
+        "action": "瞑想の時間を1日1回、5分に短縮して継続する",
+        "reason": "習慣化を促し、無理なく続けられるようにするため"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_009",
+      "prompt_id": "prompt_D",
+      "input": "- 英語の勉強: 6時間0分（12回）\n- ジム: 2時間0分（4回）",
+      "raw_output": "\n{\"action\": \"今日の英語の勉強内容を5分で振り返る\", \"reason\": \"短い復習が記憶の定着に役立ちます\"}\n\n",
+      "parsed_json": {
+        "action": "今日の英語の勉強内容を5分で振り返る",
+        "reason": "短い復習が記憶の定着に役立ちます"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_009",
+      "prompt_id": "prompt_E",
+      "input": "- 英語の勉強: 6時間0分（12回）\n- ジム: 2時間0分（4回）",
+      "raw_output": "\n```json\n{\"action\": \"...\", \"reason\": \"...\"}\n```\n```json\n{\"action\": \"英語の勉強を30分休憩する\", \"reason\": \"長時間集中した後の休憩は、学習効率を維持するために重要です\"}\n```",
+      "parsed_json": {
+        "action": "...",
+        "reason": "..."
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "NG",
+        "actionability": "NG",
+        "safety": "NG"
+      }
+    },
+    {
+      "test_case_id": "case_009",
+      "prompt_id": "prompt_F",
+      "input": "- 英語の勉強: 6時間0分（12回）\n- ジム: 2時間0分（4回）",
+      "raw_output": "\n{\"action\": \"英語の勉強を30分行う\", \"reason\": \"継続的な学習習慣を維持し、無理なく学習時間を確保します\"}",
+      "parsed_json": {
+        "action": "英語の勉強を30分行う",
+        "reason": "継続的な学習習慣を維持し、無理なく学習時間を確保します"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_010",
+      "prompt_id": "prompt_D",
+      "input": "- 散歩: 0時間15分（1回）",
+      "raw_output": "\n{\"action\": \"散歩の時間を30分に増やす\", \"reason\": \"運動時間を増やすことで、より多くの健康効果を得られます\"}\n",
+      "parsed_json": {
+        "action": "散歩の時間を30分に増やす",
+        "reason": "運動時間を増やすことで、より多くの健康効果を得られます"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_010",
+      "prompt_id": "prompt_E",
+      "input": "- 散歩: 0時間15分（1回）",
+      "raw_output": "\n```json\n{\"action\": \"15分だけ軽いストレッチをする\", \"reason\": \"運動後の疲労回復に効果的です\"}\n```",
+      "parsed_json": {
+        "action": "15分だけ軽いストレッチをする",
+        "reason": "運動後の疲労回復に効果的です"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_010",
+      "prompt_id": "prompt_F",
+      "input": "- 散歩: 0時間15分（1回）",
+      "raw_output": "\n{\"action\": \"近所の公園を10分歩く\", \"reason\": \"運動習慣を続けるための無理のない行動です\"}",
+      "parsed_json": {
+        "action": "近所の公園を10分歩く",
+        "reason": "運動習慣を続けるための無理のない行動です"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    }
+  ],
+  "summary": {
+    "prompt_D": {
+      "total": 10,
+      "format_ok": 10,
+      "format_rate": 1.0,
+      "fully_evaluated": 0,
+      "all_ok": 0,
+      "all_ok_rate": null
+    },
+    "prompt_E": {
+      "total": 10,
+      "format_ok": 10,
+      "format_rate": 1.0,
+      "fully_evaluated": 0,
+      "all_ok": 0,
+      "all_ok_rate": null
+    },
+    "prompt_F": {
+      "total": 10,
+      "format_ok": 10,
+      "format_rate": 1.0,
+      "fully_evaluated": 0,
+      "all_ok": 0,
+      "all_ok_rate": null
+    }
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "run_id": "20260328_172319",
+  "model": "mlx-community/gemma-3n-E4B-it-lm-4bit",
+  "results": [
+    {
+      "test_case_id": "case_001",
+      "prompt_id": "prompt_K",
+      "input": "- ランニング: 3時間0分（6回）",
+      "raw_output": "\n\n```json\n{\n  \"message\": \"コツコツ続けていて偉いね！\",\n  \"action\": \"今週末、友達とカフェでおしゃべりする時間を作る\",\n  \"reason\": \"頑張っている自分へのご褒美に、リフレッシュの時間も大切にしてね\"\n}\n```",
+      "parsed_json": {
+        "message": "コツコツ続けていて偉いね！",
+        "action": "今週末、友達とカフェでおしゃべりする時間を作る",
+        "reason": "頑張っている自分へのご褒美に、リフレッシュの時間も大切にしてね"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_002",
+      "prompt_id": "prompt_K",
+      "input": "- 英語の勉強: 5時間30分（10回）",
+      "raw_output": "\n\n```json\n{\n  \"message\": \"コツコツ続けていて偉いね！\",\n  \"action\": \"今週末、友達とカフェでおしゃべりする時間を作る\",\n  \"reason\": \"頑張っている自分へのご褒美に、リフレッシュの時間も大切にしてね\"\n}\n```",
+      "parsed_json": {
+        "message": "コツコツ続けていて偉いね！",
+        "action": "今週末、友達とカフェでおしゃべりする時間を作る",
+        "reason": "頑張っている自分へのご褒美に、リフレッシュの時間も大切にしてね"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_003",
+      "prompt_id": "prompt_K",
+      "input": "- 読書: 2時間0分（4回）",
+      "raw_output": "\n\n```json\n{\n  \"message\": \"コツコツ続けていて偉いね！\",\n  \"action\": \"今週末、友達とカフェでおしゃべりする時間を作る\",\n  \"reason\": \"頑張っている自分へのご褒美に、リフレッシュの時間も大切にしてね\"\n}\n```",
+      "parsed_json": {
+        "message": "コツコツ続けていて偉いね！",
+        "action": "今週末、友達とカフェでおしゃべりする時間を作る",
+        "reason": "頑張っている自分へのご褒美に、リフレッシュの時間も大切にしてね"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_004",
+      "prompt_id": "prompt_K",
+      "input": "- 勉強: 12時間0分（20回）",
+      "raw_output": "\n\n```json\n{\n  \"message\": \"コツコツ続けていて偉いね！\",\n  \"action\": \"今週末、友達とカフェでおしゃべりする時間を作る\",\n  \"reason\": \"頑張っている自分へのご褒美に、リフレッシュの時間も大切にしてね\"\n}\n```",
+      "parsed_json": {
+        "message": "コツコツ続けていて偉いね！",
+        "action": "今週末、友達とカフェでおしゃべりする時間を作る",
+        "reason": "頑張っている自分へのご褒美に、リフレッシュの時間も大切にしてね"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_005",
+      "prompt_id": "prompt_K",
+      "input": "- 筋トレ: 8時間0分（15回）\n- ランニング: 5時間0分（10回）",
+      "raw_output": "\n```json\n{\n  \"message\": \"コツコツ続けていて偉いね！\",\n  \"action\": \"今週末、友達とカフェでおしゃべりする時間を作る\",\n  \"reason\": \"頑張っている自分へのご褒美に、リフレッシュの時間も大切にしてね\"\n}\n```",
+      "parsed_json": {
+        "message": "コツコツ続けていて偉いね！",
+        "action": "今週末、友達とカフェでおしゃべりする時間を作る",
+        "reason": "頑張っている自分へのご褒美に、リフレッシュの時間も大切にしてね"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_006",
+      "prompt_id": "prompt_K",
+      "input": "- ヨガ: 0時間30分（1回）",
+      "raw_output": "\n\n```json\n{\n  \"message\": \"コツコツ続けていて偉いね！\",\n  \"action\": \"今週末、友達とカフェでおしゃべりする時間を作る\",\n  \"reason\": \"頑張っている自分へのご褒美に、リフレッシュの時間も大切にしてね\"\n}\n```",
+      "parsed_json": {
+        "message": "コツコツ続けていて偉いね！",
+        "action": "今週末、友達とカフェでおしゃべりする時間を作る",
+        "reason": "頑張っている自分へのご褒美に、リフレッシュの時間も大切にしてね"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_007",
+      "prompt_id": "prompt_K",
+      "input": "- プログラミング: 1時間0分（2回）",
+      "raw_output": "\n\n```json\n{\n  \"message\": \"コツコツ続けていて偉いね！\",\n  \"action\": \"今週末、友達とカフェでおしゃべりする時間を作る\",\n  \"reason\": \"頑張っている自分へのご褒美に、リフレッシュの時間も大切にしてね\"\n}\n```",
+      "parsed_json": {
+        "message": "コツコツ続けていて偉いね！",
+        "action": "今週末、友達とカフェでおしゃべりする時間を作る",
+        "reason": "頑張っている自分へのご褒美に、リフレッシュの時間も大切にしてね"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_008",
+      "prompt_id": "prompt_K",
+      "input": "- ランニング: 4時間0分（8回）\n- 読書: 3時間0分（5回）\n- 瞑想: 1時間0分（10回）",
+      "raw_output": "\n```json\n{\n  \"message\": \"コツコツ続けていて偉いね！\",\n  \"action\": \"今週末、友達とカフェでおしゃべりする時間を作る\",\n  \"reason\": \"頑張っている自分へのご褒美に、リフレッシュの時間も大切にしてね\"\n}\n```",
+      "parsed_json": {
+        "message": "コツコツ続けていて偉いね！",
+        "action": "今週末、友達とカフェでおしゃべりする時間を作る",
+        "reason": "頑張っている自分へのご褒美に、リフレッシュの時間も大切にしてね"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_009",
+      "prompt_id": "prompt_K",
+      "input": "- 英語の勉強: 6時間0分（12回）\n- ジム: 2時間0分（4回）",
+      "raw_output": "\n\n```json\n{\n  \"message\": \"コツコツ続けていて偉いね！\",\n  \"action\": \"今週末、友達とカフェでおしゃべりする時間を作る\",\n  \"reason\": \"頑張っている自分へのご褒美に、リフレッシュの時間も大切にしてね\"\n}\n```",
+      "parsed_json": {
+        "message": "コツコツ続けていて偉いね！",
+        "action": "今週末、友達とカフェでおしゃべりする時間を作る",
+        "reason": "頑張っている自分へのご褒美に、リフレッシュの時間も大切にしてね"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    },
+    {
+      "test_case_id": "case_010",
+      "prompt_id": "prompt_K",
+      "input": "- 散歩: 0時間15分（1回）",
+      "raw_output": "\n\n```json\n{\n  \"message\": \"コツコツ続けていて偉いね！\",\n  \"action\": \"今週末、友達とカフェでおしゃべりする時間を作る\",\n  \"reason\": \"頑張っている自分へのご褒美に、リフレッシュの時間も大切にしてね\"\n}\n```",
+      "parsed_json": {
+        "message": "コツコツ続けていて偉いね！",
+        "action": "今週末、友達とカフェでおしゃべりする時間を作る",
+        "reason": "頑張っている自分へのご褒美に、リフレッシュの時間も大切にしてね"
+      },
+      "eval": {
+        "format": "OK",
+        "relevance": "OK",
+        "actionability": "OK",
+        "safety": "OK"
+      }
+    }
+  ],
+  "summary": {
+    "prompt_K": {
+      "total": 10,
+      "format_ok": 10,
+      "format_rate": 1.0,
+      "fully_evaluated": 0,
+      "all_ok": 0,
+      "all_ok_rate": null
+    }
+  }
+}
