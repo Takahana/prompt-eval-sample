@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Queries needed to launch target app activities and detect packages from instrumentation -->
+    <queries>
+        <package android:name="com.example.prompttest" />
+    </queries>
+
+</manifest>
